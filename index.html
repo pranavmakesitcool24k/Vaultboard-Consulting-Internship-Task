@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fraction Assessment</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Fractions Assessment</h1>
+      <p class="instruction">
+        This module helps you understand and practice basic fraction operations.
+      </p>
+
+      <div id="initial-page" class="initial-visualizer">
+        <h2>What is a Fraction?</h2>
+        <p>
+          A fraction represents a part of a whole. The top number is the
+          <b>numerator</b>, which tells us how many parts we have. The bottom
+          number is the <b>denominator</b>, which tells us how many total parts
+          the whole is divided into.
+        </p>
+        <div class="pizza-container">
+          <svg class="pizza" id="pizza-init" viewBox="0 0 100 100"></svg>
+          <div class="fraction-label" id="label-init">1/4</div>
+        </div>
+
+        <div class="slider-container">
+          <div class="slider-group">
+            <span>Numerator:</span>
+            <input
+              type="range"
+              id="numerator-slider"
+              min="0"
+              max="10"
+              value="1"
+            />
+          </div>
+          <div class="slider-group">
+            <span>Denominator:</span>
+            <input
+              type="range"
+              id="denominator-slider"
+              min="1"
+              max="10"
+              value="4"
+            />
+          </div>
+        </div>
+
+        <button class="start-button" onclick="startQuiz()">Start Quiz ►</button>
+      </div>
+
+      <div id="quiz-content" class="hide">
+        <div class="quiz-section">
+          <h2 class="quiz-title">
+            Fraction <span id="operation-type">Addition</span> Quiz
+          </h2>
+          <p class="instruction" id="instruction">
+            Drag the slices to solve the problem!
+          </p>
+          <div class="visualization" id="visualization">
+            <div class="pizza-container" data-pizza="pizza1">
+              <svg class="pizza" id="pizza1" viewBox="0 0 100 100"></svg>
+              <div class="fraction-label" id="label1">0/3</div>
+            </div>
+            <div class="operator" id="operator">+</div>
+            <div class="pizza-container" data-pizza="pizza2">
+              <svg class="pizza" id="pizza2" viewBox="0 0 100 100"></svg>
+              <div class="fraction-label" id="label2">0/3</div>
+            </div>
+            <div class="operator operator-equals">=</div>
+            <div class="pizza-container" data-pizza="pizza3">
+              <svg class="pizza" id="pizza3" viewBox="0 0 100 100"></svg>
+              <div class="fraction-label" id="label3">0/3</div>
+            </div>
+          </div>
+
+          <div class="equation">
+            <div class="fraction-input">
+              <div id="num1">2</div>
+              <div class="line"></div>
+              <div id="den1">3</div>
+            </div>
+            <div id="quiz-operator">+</div>
+            <div class="fraction-input">
+              <div id="num2">1</div>
+              <div class="line"></div>
+              <div id="den2">3</div>
+            </div>
+            <div>=</div>
+            <div class="fraction-input">
+              <input
+                type="number"
+                id="answer-num"
+                placeholder="?"
+                min="0"
+                max="10"
+              />
+              <div class="line"></div>
+              <input
+                type="number"
+                id="answer-den"
+                placeholder="?"
+                min="1"
+                max="10"
+              />
+            </div>
+          </div>
+          <div class="buttons">
+            <button class="btn-hint" onclick="showHint()">Get Hint</button>
+            <button class="btn-check" onclick="checkAnswer()">
+              ✓ Check Answer
+            </button>
+          </div>
+          <div class="feedback" id="feedback"></div>
+          <div class="question-info" id="question-info">Question 1 of 5</div>
+        </div>
+      </div>
+
+      <div class="completion-screen" id="completion-screen">
+        <h2>🎉 Congratulations! 🎉</h2>
+        <p>You've completed the module!</p>
+        <div class="score">
+          <span id="final-score">Score: 0/0</span>
+        </div>
+        <p>Great job learning about fractions!</p>
+        <button class="btn-restart" onclick="restartQuiz()">Start Over</button>
+      </div>
+
+      <div class="hide" id="mode-completion-screen">
+        <h2 style="color: #2c3e50; text-align: center; margin-top: 40px">
+          Great job with Addition!
+        </h2>
+        <p class="instruction">Ready to try Subtraction?</p>
+        <div style="text-align: center">
+          <button class="start-button" onclick="startSubtractionQuiz()">
+            Start Subtraction Quiz ►
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
