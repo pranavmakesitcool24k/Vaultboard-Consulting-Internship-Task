@@ -55,21 +55,6 @@ A visual and interactive module to help learners understand and practice basic f
 
 ---
 
-## File Structure
-
-fraction-assessment/
-│
-├── index.html # Main HTML page
-├── style.css # Styles for the module
-├── script.js # JavaScript logic for visualizer and quiz
-└── README.md # Project documentation
-
----
-
-
-
----
-
 ## Future Improvements
 
 - Snap floating slices directly to target pizza for smoother UX.  
